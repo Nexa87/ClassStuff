@@ -7,27 +7,30 @@ using System.Threading.Tasks;
 
 namespace Disaheim
 {
-    public class Amulet
+    public class Amulet : Merchandise
 
     {
-        public string ItemId;
+        
         public string Design;
         public Level Quality;
 
-        public Amulet(string itemId)
+        public Amulet(string itemId, Level quality, string design)
         {
-            this.ItemId = itemId;
-            this.Quality = Level.medium;
+            Design = design;
+            Quality = quality;
+            base.ItemId = itemId;   
+            
+
         }
-        public Amulet(string itemId, Level quality): this(itemId)
+        public Amulet(string itemId, Level quality): this(itemId, quality, "") 
         {
-            this.Quality= quality;
-        }
-        public Amulet(string itemId, Level quality, string design): this(itemId, quality)
-        {
-            this.Design = design;
+            
         }
         
+        public Amulet(string itemId): this(itemId,Level.medium,"")
+        {
+            
+        }
 
         
        
